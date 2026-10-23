@@ -1,0 +1,560 @@
+/* --- PALETA NEGRO Y DORADO --- */
+:root {
+    --bg-dark: #0a0a0a;
+    --bg-card: #141414;
+    --bg-tablet: #1a1a1a;
+    --bg-gray: #1e1e1e;
+    --bg-gray: #2a2a2a;
+    --gold-primary: #d4af37;
+    --gold-gradient: linear-gradient(135deg, #f3e5ab 0%, #d4af37 50%, #aa7c11 100%);
+    --gold-hover: #f3e5ab;
+    --text-light: #f5f5f5;
+    --text-muted: #a3a3a3;
+    --border-gold: rgba(212, 175, 55, 0.3);
+    --border-gold-bright: #d4af37;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- BARRA DE NAVEGACIÓN --- */
+header {
+    background-color: rgba(10, 10, 10, 0.95);
+    border-bottom: 1px solid var(--border-gold);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    padding: 18px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.logo span {
+    background: var(--gold-gradient);
+    color: #000;
+    font-size: 0.65rem;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+    -webkit-text-fill-color: #000;
+    text-transform: uppercase;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--gold-primary);
+    text-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* --- BOTÓN VOLVER A INICIO --- */
+.btn-back-home {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--gold-primary);
+    border: 1px solid var(--gold-primary);
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    transition: all 0.3s;
+}
+
+.btn-back-home:hover {
+    background: var(--gold-primary);
+    color: #000;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* --- ESTILOS GENERALES DE PÁGINAS --- */
+.page-content {
+    padding: 50px 0;
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.page-header h1, .page-header h2 {
+    font-size: 2.5rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.btn-gold {
+    display: inline-block;
+    background: var(--gold-gradient);
+    color: #000;
+    padding: 14px 36px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+}
+
+.btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    background: var(--gold-hover);
+}
+
+/* --- HERO & TABLET (INICIO) --- */
+.hero {
+    text-align: center;
+    padding: 20px 20px 50px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 0 auto 35px;
+    font-size: 1.15rem;
+    color: var(--text-muted);
+}
+
+.tablet-mockup {
+    width: 100%;
+    max-width: 800px;
+    background: #000;
+    border-radius: 30px;
+    padding: 25px 20px;
+    margin: 0 auto 50px;
+    box-shadow: 0 0 35px rgba(212, 175, 55, 0.15);
+    border: 2px solid var(--border-gold-bright);
+}
+
+.tablet-screen {
+    background: var(--bg-tablet);
+    border-radius: 12px;
+    min-height: 380px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.service-preview {
+    display: none;
+}
+
+.service-preview.active {
+    display: block;
+}
+
+.service-preview .icon {
+    font-size: 3.8rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-preview h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--gold-primary);
+}
+
+.service-preview p {
+    color: var(--text-muted);
+    max-width: 580px;
+    font-size: 1.05rem;
+}
+
+/* --- GRILLA DE TARJETAS --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover, .service-card.active {
+    border-color: var(--gold-primary);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+    transform: translateY(-4px);
+    background: #1a170f;
+}
+
+.card-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.service-card h4 {
+    font-size: 1.05rem;
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.service-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.service-price {
+    font-size: 0.9rem;
+    color: var(--gold-primary);
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* --- NOSOTROS --- */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.about-card {
+    background: var(--bg-card);
+    padding: 35px 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-gold);
+}
+
+.about-card h3 {
+    font-size: 1.3rem;
+    color: var(--gold-primary);
+    margin-bottom: 15px;
+}
+
+.about-card p, .about-card ul {
+    color: var(--text-muted);
+    font-size: 0.98rem;
+}
+
+.about-card ul {
+    list-style: none;
+}
+
+.about-card ul li {
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.about-card ul li::before {
+    content: "✦";
+    color: var(--gold-primary);
+    position: absolute;
+    left: 0;
+}
+
+/* --- FOTOGRAFÍAS NOSOTROS --- */
+.photo-section {
+    margin-top: 50px;
+}
+
+.photo-section h3 {
+    font-size: 1.3rem;
+    color: var(--gold-primary);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.photo-section p {
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.photo-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.photo-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-4px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card figcaption {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* --- PRECIOS NOSOTROS --- */
+.precios-section {
+    background: var(--bg-gray);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 35px 25px;
+    margin-top: 50px;
+}
+
+.precios-section h3 {
+    font-size: 1.5rem;
+    color: var(--gold-primary);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.precios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.precio-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.precio-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-4px);
+}
+
+.precio-card h4 {
+    font-size: 1.15rem;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.precio-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.precio-precio {
+    font-size: 1.15rem;
+    color: var(--gold-primary);
+    font-weight: 700;
+}
+
+/* --- PRECIOS EN PESOS COLOMBIANOS --- */
+.prices-section {
+    background: #1e1e1e;
+    padding: 50px 0;
+    border-top: 1px solid var(--border-gold);
+    border-bottom: 1px solid var(--border-gold);
+}
+
+.prices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.price-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    border-radius: 8px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.price-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-4px);
+}
+
+.price-card.featured {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+.price-card h3 {
+    font-size: 1.4rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 1rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.price-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+}
+
+.price-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.price-card ul li {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.price-card ul li::before {
+    content: "✦";
+    color: var(--gold-primary);
+    position: absolute;
+    left: 0;
+}
+
+/* --- CONTACTO --- */
+.contact-container {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-gold);
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--gold-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    background: #000;
+    border: 1px solid var(--border-gold);
+    border-radius: 4px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #000;
+    border-top: 1px solid var(--border-gold);
+    color: var(--text-muted);
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 0.9rem;
+    margin-top: 60px;
+}
